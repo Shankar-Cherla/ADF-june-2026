@@ -1,0 +1,15 @@
+{
+	"name": "june-adf-practise-scenarios",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4a062f6d-519d-46fa-8834-56c09f426da9",
+		"tenantId": "1c2023f4-2a5d-4973-91f4-30547aed4f30"
+	}
+}
