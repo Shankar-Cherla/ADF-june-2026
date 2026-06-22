@@ -19,9 +19,10 @@
 						"type": "ExcelSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": false,
-							"enablePartitionDiscovery": false,
-							"prefix": "input/section8"
+							"recursive": true,
+							"wildcardFolderPath": "d*r",
+							"wildcardFileName": "section*",
+							"enablePartitionDiscovery": false
 						}
 					},
 					"sink": {
