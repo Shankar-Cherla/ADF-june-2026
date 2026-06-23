@@ -17,12 +17,37 @@
 				"typeProperties": {
 					"source": {
 						"type": "ExcelSource",
+						"additionalColumns": [
+							{
+								"name": "Prop_1o_dup_col",
+								"value": "$$COLUMN:Prop_10"
+							},
+							{
+								"name": "file_path_col",
+								"value": "$$FILEPATH"
+							},
+							{
+								"name": "file_name_col",
+								"value": "$$FILENAME"
+							},
+							{
+								"name": "another_col",
+								"value": "dummy text"
+							},
+							{
+								"name": "pipeline_name_col",
+								"value": {
+									"value": "@pipeline().Pipeline",
+									"type": "Expression"
+								}
+							}
+						],
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "d*r",
-							"wildcardFileName": "section*",
-							"enablePartitionDiscovery": false
+							"wildcardFolderPath": "arrg_dim/feed_id=S130/*",
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": true
 						}
 					},
 					"sink": {
@@ -34,7 +59,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": ""
 						}
 					},
 					"enableStaging": false,
