@@ -1,0 +1,20 @@
+{
+	"name": "dataset_excel_type_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "link_blobstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"sheetIndex": 0,
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
