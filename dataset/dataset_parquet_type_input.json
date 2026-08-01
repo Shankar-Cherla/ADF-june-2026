@@ -1,0 +1,19 @@
+{
+	"name": "dataset_parquet_type_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "link_blobstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
