@@ -16,18 +16,19 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "ExcelSource",
+						"type": "AvroSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": false,
-							"enablePartitionDiscovery": false,
-							"prefix": "dep"
+							"wildcardFileName": "*avro",
+							"enablePartitionDiscovery": false
 						}
 					},
 					"sink": {
 						"type": "AvroSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "MergeFiles"
 						},
 						"formatSettings": {
 							"type": "AvroWriteSettings"
@@ -45,7 +46,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "dataset_excel_type_input",
+						"referenceName": "dataset_avro_type_input",
 						"type": "DatasetReference"
 					}
 				],
