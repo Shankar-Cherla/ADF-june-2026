@@ -17,20 +17,24 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"additionalColumns": [
-							{
-								"value": "$$COLUMN:"
-							}
-						],
-						"sqlReaderQuery": "select col2,upper('sai') as col1 from dbo.gold_ref;",
+						"sqlReaderQuery": "select col2,upper('sia') as col1 from dbo.gold_ref;",
 						"queryTimeout": "02:00:00",
 						"isolationLevel": "ReadCommitted",
 						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"preCopyScript": "insert into dbo.vanakkam values (9999,'xxx');",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true,
+							"keys": [
+								"col2"
+							]
+						},
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
