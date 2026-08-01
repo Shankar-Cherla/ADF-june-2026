@@ -1,0 +1,19 @@
+{
+	"name": "dataset_avro_type_output",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "link_blobstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "departments.avro",
+				"container": "input"
+			}
+		},
+		"schema": {}
+	}
+}
