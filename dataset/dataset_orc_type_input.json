@@ -1,0 +1,17 @@
+{
+	"name": "dataset_orc_type_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "link_blobstorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Orc",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			},
+			"enablePhysicalSchema": true
+		}
+	}
+}
